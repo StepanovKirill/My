@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import Rates from './components/Rates';
+import MainPanel from './ui/MainPanel/MainPanel';
+import PropTypes from 'prop-types';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+
+    const [date, setDate] = useState(null);
+    const updateDate = (data) => {
+        setDate(data);
+    };
+
+    return (
+        <div>
+            <MainPanel title="Курс валют">
+                <Rates updateDate={updateDate}/>
+                <div style={{'margin-left':'10%'}}>
+                    (последнее обновление: {date})
+                </div>
+            </MainPanel>
+        </div>
+    );
+};
 
 export default App;

@@ -1,0 +1,51 @@
+.container {
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
+    border-bottom: 1px inset var(--border-color);
+    background-color: var(--container-background-color);
+}
+
+.caption {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: 30px;
+    margin-bottom: 0;
+    cursor: pointer;
+    border-bottom: 1px inset var(--border-color);
+    background-color: var(--caption-background-color);
+}
+
+.title {
+    margin: auto;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--header-color);
+}
+
+.toggle {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background: url("spinner.png") 50% 0 no-repeat;
+    background-color: var(--caption-background-color);
+}
+
+.content {
+    margin-left: 3%;
+    opacity: 1;
+}
+
+.containerCollapsed .toggle {
+    transform: rotate(180deg);
+}
+
+.containerCollapsed .content {
+    height: 0;
+    max-height: 0;
+    opacity: 0;
+}
